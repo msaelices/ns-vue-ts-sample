@@ -1,20 +1,22 @@
 <template>
-    <Page>
-        <ActionBar title="Welcome to NativeScript-Vue!"/>
-        <GridLayout columns="*" rows="*">
-            <Label class="message" :text="msg" col="0" row="0"/>
-        </GridLayout>
-    </Page>
+  <Page>
+    <ActionBar title="Welcome to NativeScript-Vue!"/>
+    <GridLayout columns="*" rows="*">
+      <Label class="message" :text="msg" col="0" row="0"/>
+    </GridLayout>
+  </Page>
 </template>
 
-<script>
-  export default {
-    data() {
+<script lang="ts">
+  import Vue from 'nativescript-vue';
+
+  export default Vue.extend({
+    data(): any {
       return {
-        msg: 'Hello World!'
+        msg: 'Hello Typescript World!'
       }
     }
-  }
+  });
 </script>
 
 <style scoped>

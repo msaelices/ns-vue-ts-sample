@@ -56,7 +56,7 @@ module.exports = env => {
     const appResourcesFullPath = resolve(projectRoot, appResourcesPath);
 
     const entryModule = nsWebpack.getEntryModule(appFullPath);
-    const entryPath = `.${sep}${entryModule}.js`;
+    const entryPath = `.${sep}${entryModule}.ts`;
     console.log(`Bundling application for entryPath ${entryPath}...`);
 
     const config = {
@@ -83,7 +83,7 @@ module.exports = env => {
             globalObject: "global",
         },
         resolve: {
-            extensions: [".vue", ".js", ".scss", ".css"],
+            extensions: [".ts", ".js", ".scss", ".css"],
             // Resolve {N} system modules from tns-core-modules
             modules: [
                 resolve(__dirname, "node_modules/tns-core-modules"),
@@ -196,6 +196,13 @@ module.exports = env => {
                         compiler: NsVueTemplateCompiler,
                     },
                 },
+                {
+                    test: /\.tsx?$/,
+                    loader: 'ts-loader',
+                    options: {
+                        appendTsSuffixTo: [/\.vue$/]
+                    }
+                }
             ],
         },
         plugins: [

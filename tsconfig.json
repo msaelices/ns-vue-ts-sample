@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "emitDecoratorMetadata": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "noEmitHelpers": true,
+    "baseUrl": "app",
+    "lib": [
+      "es6",
+      "dom",
+      "es2015.iterable"
+    ]  
+  },
+  "paths": {
+    "*": [
+        "app/*.ts",
+        "./node_modules/tns-core-modules/*",
+        "./node_modules/*"
+    ],
+    "~/*": [
+        "app/*"
+    ]
+  },
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.d.ts",
+    "platforms"    
+  ]
+}
